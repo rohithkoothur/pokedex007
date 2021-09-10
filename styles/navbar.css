@@ -26,8 +26,8 @@
     transition: 0.3s;
     width: 70%;
     align-items: center;
-    background-color: mediumturquoise;
-    border-color: yellow;
+    background-color: rgb(152, 205, 236);
+    border-color: rgb(248, 248, 217);
     border-style: outset;
     border-radius: 20px;
     color: crimson;
@@ -53,3 +53,16 @@
     font-family: OCR A Std, monospace;
     align-items: center;
   }
+
+  .typeheading{
+      color: rgb(3, 5, 109);
+      margin-left: 12px;
+      font-family: Stencil Std, fantasy;
+      
+    transition: 0.3s;
+    max-height: 70px;
+    margin-right: 12px;
+    max-width: 100%;
+
+  }
+ 

@@ -3,8 +3,12 @@ import Image from 'next/image'
 import NavBar from '../Components/NavBar/NavBar'
 import styles from '../styles/Home.module.css'
 import Marquee from "react-fast-marquee";
+import pokeball from '../images/pokeball.png';
+import Link from 'next/link'
 
-export default function Home() {
+
+
+export default function Home({normaltype,electrictype,fightingtype}) {
   return (
     <div >
       <Head>
@@ -26,6 +30,159 @@ export default function Home() {
   </ol>
 </nav>
 
+<div className="typeheading">
+  <h2> <Image className="pokeimage" src={pokeball} alt="logo"/>Normal Pokemons</h2>
+</div>
+
+<div className='row' >
+               
+
+                
+                    <div className='posters' >
+
+                        {
+                            normaltype.pokemon.map((name, index) => {
+                                return (
+                                    
+                                    <div className="cardtest" key={name}>
+                                         
+                                        
+                                        
+                                         <Link href={`/pokemons/${name.pokemon.name}`}><a>   <div className="titt" >
+                                        
+
+
+                                            {
+                                              
+                                             
+                                           <h4>{name.pokemon.name.toUpperCase()}</h4>
+                                          
+                                           
+                                            
+                                            }
+                                            <img className="posters" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${name.pokemon.url.slice(34,-1)}.png`} />
+                                            
+                                            </div></a></Link>
+                                        
+
+                                    </div>
+                                )
+                            })
+                        }
+
+     
+                    </div>)
+            </div>
+            <div className="typeheading">
+  <h2> <Image className="pokeimage" src={pokeball} alt="logo"/>Electric Pokemons</h2>
+</div>
+
+<div className='row' >
+               
+
+                
+                    <div className='posters' >
+
+                        {
+                            electrictype.pokemon.map((name, index) => {
+                                return (
+                                    
+                                    <div className="cardtest" key={name}>
+                                         
+                                        
+                                        
+                                         <Link href={`/pokemons/${name.pokemon.name}`}><a>   <div className="titt" >
+                                        
+
+
+                                            {
+                                              
+                                             
+                                           <h4>{name.pokemon.name.toUpperCase()}</h4>
+                                          
+                                           
+                                            
+                                            }
+                                            <img className="posters" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${name.pokemon.url.slice(34,-1)}.png`} />
+                                            
+                                            </div></a></Link>
+                                        
+
+                                    </div>
+                                )
+                            })
+                        }
+
+     
+                    </div>)
+            </div>
+            
+            <div className="typeheading">
+  <h2> <Image className="pokeimage" src={pokeball} alt="logo"/>Fighting Pokemons</h2>
+</div>
+<div className='row' >
+               
+
+                
+                    <div className='posters' >
+
+                        {
+                            fightingtype.pokemon.map((name, index) => {
+                                return (
+                                    
+                                    <div className="cardtest" key={name}>
+                                         
+                                        
+                                        
+                                         <Link href={`/pokemons/${name.pokemon.name}`}><a>   <div className="titt" >
+                                        
+
+
+                                            {
+                                              
+                                             
+                                           <h4>{name.pokemon.name.toUpperCase()}</h4>
+                                          
+                                           
+                                            
+                                            }
+                                            <img className="posters" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${name.pokemon.url.slice(34,-1)}.png`} />
+                                            
+                                            </div></a></Link>
+                                        
+
+                                    </div>
+                                )
+                            })
+                        }
+
+     
+                    </div>)
+            </div>
+
+
     </div>
   )
+}
+
+
+export const getServerSideProps = async () => {
+  const resnormal = await fetch(`https://pokeapi.co/api/v2/type/normal`)
+  const datanormal = await resnormal.json()
+
+  const reselectric = await fetch(`https://pokeapi.co/api/v2/type/electric`)
+  const dataelectric = await reselectric.json()
+
+  const reselfighting = await fetch(`https://pokeapi.co/api/v2/type/fighting`)
+  const datafighting = await reselfighting.json()
+
+
+
+  return {
+      props: {
+           normaltype : datanormal,
+           electrictype : dataelectric,
+           fightingtype : datafighting
+      }
+  }
 }
