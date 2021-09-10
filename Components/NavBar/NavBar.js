@@ -13,7 +13,7 @@ const NavBar = ()=>{
         <div>
             
            <nav className="navbar navbar-dark bg-dark">
-  <a className="navbar-brand"><Image src={logo} alt="logo"/>   </a>
+  <Link href="/"><a className="navbar-brand"><Image src={logo} alt="logo"/>   </a></Link>
   <form className="form-inline">
     <input className="form-control mr-sm-2" value={query} onChange={(e)=>{
       
