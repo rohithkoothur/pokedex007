@@ -41,9 +41,10 @@ const PokemonPage = ({name,pokemon,error})=>{
             )
           })
         }
+
         
         <div className="detailsimage">
-        <img className="posters" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10093.png`} />
+        <img className="detailsimage" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`} />
         </div>
          
         
