@@ -28,9 +28,7 @@ const PokemonPage = ({name,pokemon,error})=>{
     
     
     <div className="detailscard">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum sapiente velit, recusandae natus aliquid provident nisi exercitationem quis perspiciatis quisquam laboriosam neque explicabo nam aspernatur itaque corrupti incidunt, eos aut et. Quos fugit, dignissimos veritatis iusto earum, maxime eius rerum sunt nisi voluptas mollitia repellendus non nihil quaerat. Optio pariatur dolorem autem ratione natus alias tenetur quia. Iusto eveniet at ad veniam accusamus culpa nam obcaecati optio, dicta earum necessitatibus placeat. Animi voluptate ad magni, iure quo quis libero sequi? Debitis iste consequuntur qui sapiente blanditiis labore eum architecto voluptates minus iure dolor tempora voluptatum eaque quo, minima in alias!
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem architecto magnam nostrum minus beatae, aspernatur nisi praesentium? Libero reprehenderit enim sint nobis explicabo! Similique eum ex commodi fugit, nisi iure perspiciatis? Dolore corporis impedit, necessitatibus hic mollitia officiis nam doloremque odit dolorem explicabo dolores deleniti? Asperiores ducimus laboriosam placeat corrupti necessitatibus fugiat est.
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia porro quo omnis ullam nihil. Molestias incidunt impedit, repudiandae, perferendis voluptas iusto obcaecati magnam adipisci dolores minus quod a vitae harum.
+        <div className="detailspokemonname"><h3 className="detailspokemonname">{pokemon.name.toUpperCase()}</h3></div>
     </div>
 
 
