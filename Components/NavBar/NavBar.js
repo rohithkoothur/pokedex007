@@ -64,19 +64,3 @@ const NavBar = ()=>{
 export default NavBar
 
 
-export const getServerSideProps = async () => {
-    const resnormal = await fetch(`https://pokeapi.co/api/v2/type/normal`)
-    const datanormal = await resnormal.json()
-
-    const reselectric = await fetch(`https://pokeapi.co/api/v2/type/electric`)
-    const dataelectric = await reselectric.json()
-
-
-
-    return {
-        props: {
-             normaltype : datanormal,
-             electrictype : dataelectric
-        }
-    }
-}
