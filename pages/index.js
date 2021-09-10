@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import NavBar from '../Components/NavBar/NavBar'
 import styles from '../styles/Home.module.css'
+import Marquee from "react-fast-marquee";
 
 export default function Home() {
   return (
@@ -17,6 +18,14 @@ export default function Home() {
       
       
       <NavBar/>
+      <nav aria-label="breadcrumb">
+  <ol  className="breadcrumb">
+    <div className="welcome">
+ <h5 > <Marquee>!!...Welcome to Pokedex... A World of Pokemons...!!</Marquee></h5>
+  </div>
+  </ol>
+</nav>
+
     </div>
   )
 }

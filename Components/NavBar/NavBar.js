@@ -9,6 +9,7 @@ const NavBar = ()=>{
 
     return(
         <div>
+            
            <nav className="navbar navbar-dark bg-dark">
   <a className="navbar-brand"><Image src={logo} alt="logo"/>   </a>
   <form className="form-inline">
@@ -26,6 +27,7 @@ const NavBar = ()=>{
           putPokemon(data);
           console.log(data);
           
+          
 
 
         });
@@ -36,6 +38,19 @@ const NavBar = ()=>{
     }>Search</button>
   </form>
 </nav>
+
+{
+    pokemon?.name &&  <div className="alert alert-success" role="alert">
+    <h5>Search Result : {pokemon.name.toUpperCase()}</h5>
+   </div> 
+    
+    
+}
+
+
+
+
+
 
 
 
