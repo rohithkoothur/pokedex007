@@ -28,7 +28,26 @@ const PokemonPage = ({name,pokemon,error})=>{
     
     
     <div className="detailscard">
-        <div className="detailspokemonname"><h3 className="detailspokemonname">{pokemon.name.toUpperCase()}</h3></div>
+        <div className="detailspokemonname">
+          <h3 className="detailspokemonname">{pokemon.name.toUpperCase()}</h3>
+          </div>
+        
+        {
+          pokemon.types.map((type)=>{
+            return (
+              <div className="detailstype" key="type.type.name">
+              <span className="badge badge-success detailstype">{type.type.name.toUpperCase()}</span>
+              </div>
+            )
+          })
+        }
+        
+        <div className="detailsimage">
+        <img className="posters" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10093.png`} />
+        </div>
+         
+        
+    
     </div>
 
 
