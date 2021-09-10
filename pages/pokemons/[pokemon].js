@@ -46,6 +46,30 @@ const PokemonPage = ({name,pokemon,error})=>{
         <div className="detailsimage">
         <img className="detailsimage" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`} />
         </div>
+
+        <div className="detailsabout">
+        <button  className="btn btn-success">About</button>
+<ul className="list-group">
+        <li className="list-group-item list-group-item-success">Height : {pokemon.height}0cm</li>
+        <li className="list-group-item list-group-item-success">Weight : {pokemon.weight}Kg</li>
+        <li className="list-group-item list-group-item-success">Abilities : {
+          pokemon.abilities.map((ability)=>{
+            return(
+              <div key={ability.ability.name}><ul><li>{ability.ability.name.toUpperCase() }</li></ul></div>
+            )
+          })
+        }</li>
+        
+        </ul>
+
+        
+  
+         
+       
+
+        </div>
+      
+
          
         
     

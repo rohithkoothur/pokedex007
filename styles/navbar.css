@@ -91,7 +91,8 @@
       align-items: center;
       
       
-    }
+    };
+    
 
     
   }
@@ -117,3 +118,9 @@
   max-width: 100px;
     
   }
+
+  .progressbar1{
+    width: 50%;
+  }
+
+  
