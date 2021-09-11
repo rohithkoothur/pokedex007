@@ -30,7 +30,7 @@ const Details =({ninja,name})=>{
             <NavBar/>
             <br />
             <div className="typeheading">
-  <h2> {name} Pokemons</h2>
+  <h2> {name.toUpperCase()} Pokemons</h2>
 </div>
      
 {
