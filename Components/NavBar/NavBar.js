@@ -3,6 +3,7 @@ import logo from '../../images/logo.png'
 import Link from 'next/link'
 import { useState } from 'react'
 import Router from 'next/router'
+import { motion } from 'framer-motion'
 const NavBar = ()=>{
     const [pokemon, putPokemon]= useState( []);
     
@@ -10,7 +11,7 @@ const NavBar = ()=>{
 
 
     return(
-        <div>
+        <motion.div animate={{ y:-10}} initial={{y:-250}}>
             
            <nav className="navbar navbar-dark bg-dark">
   <Link href="/"><a className="navbar-brand"><Image src={logo} alt="logo"/>   </a></Link>
@@ -60,7 +61,7 @@ const NavBar = ()=>{
 
 
 
-        </div>
+        </motion.div>
     )
 }
 

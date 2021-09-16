@@ -5,6 +5,7 @@ import styles from '../styles/Home.module.css'
 import Marquee from "react-fast-marquee";
 import pokeball from '../images/pokeball.png';
 import Link from 'next/link'
+import { motion } from 'framer-motion';
 
 
 
@@ -34,7 +35,9 @@ export default function Home({normaltype,electrictype,fightingtype}) {
   <h2> <Image className="pokeimage" src={pokeball} alt="logo"/>Normal Pokemons</h2>
 </div>
 
-<div className='row' >
+<motion.div className='row' 
+
+>
                
 
                 
@@ -44,7 +47,7 @@ export default function Home({normaltype,electrictype,fightingtype}) {
                             normaltype.pokemon.map((name, index) => {
                                 return (
                                     
-                                    <div className="cardtest" key={name}>
+                                    <motion.div className="cardtest" key={name} whileHover={{scale:1.1}}>
                                          
                                         
                                         
@@ -65,14 +68,14 @@ export default function Home({normaltype,electrictype,fightingtype}) {
                                             </div></a></Link>
                                         
 
-                                    </div>
+                                    </motion.div>
                                 )
                             })
                         }
 
      
                     </div>)
-            </div>
+            </motion.div>
             <div className="typeheading">
   <h2> <Image className="pokeimage" src={pokeball} alt="logo"/>Electric Pokemons</h2>
 </div>
@@ -87,7 +90,7 @@ export default function Home({normaltype,electrictype,fightingtype}) {
                             electrictype.pokemon.map((name, index) => {
                                 return (
                                     
-                                    <div className="cardtest" key={name}>
+                                    <motion.div className="cardtest" key={name} whileHover={{scale:1.1}}>
                                          
                                         
                                         
@@ -108,7 +111,7 @@ export default function Home({normaltype,electrictype,fightingtype}) {
                                             </div></a></Link>
                                         
 
-                                    </div>
+                                    </motion.div>
                                 )
                             })
                         }
@@ -130,7 +133,7 @@ export default function Home({normaltype,electrictype,fightingtype}) {
                             fightingtype.pokemon.map((name, index) => {
                                 return (
                                     
-                                    <div className="cardtest" key={name}>
+                                    <motion.div className="cardtest" key={name} whileHover={{scale:1.1}}>
                                          
                                         
                                         
@@ -151,7 +154,7 @@ export default function Home({normaltype,electrictype,fightingtype}) {
                                             </div></a></Link>
                                         
 
-                                    </div>
+                                    </motion.div>
                                 )
                             })
                         }
