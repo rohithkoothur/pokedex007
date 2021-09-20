@@ -13,7 +13,7 @@
   }
   
   .posters{
-    display: flex;
+    display:inline-flex;
     padding: 20px;
     overflow-x: scroll;
     overflow-y:hidden ;
@@ -46,6 +46,8 @@
   
   .titt{
     margin-left: 12px;
+    font-family: monospace;
+    
   }
   .welcome{
     font-family: OCR A Std, monospace;
@@ -55,7 +57,7 @@
   .typeheading{
       color: rgb(3, 5, 109);
       margin-left: 12px;
-      font-family: Stencil Std, fantasy;
+      font-family: Bahnschrift SemiBold;
       
     transition: 0.3s;
     max-height: 70px;
@@ -124,3 +126,49 @@
   }
 
   
+
+
+
+
+
+  .testposters{
+    display:inline-flex;
+    padding: 20px;
+    overflow-x: scroll;
+    overflow-y:hidden ;
+    
+  }
+  .testcardtest{
+    box-shadow: 0 11px 20px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 70%;
+    align-items: center;
+    margin-right: 15px;
+    
+   
+    border-radius: 10px;
+    color: crimson;
+    font-family: monospace;
+  }
+  
+  .testposters::-webkit-scrollbar{
+    display: none;
+  }
+  
+  
+  .testposter{
+    max-height: 10px;
+    margin-right: 10px;
+    
+  
+  }
+  
+  .testpokemonname{
+    text-align: center;
+    margin-right:8px;
+    font-style: italic;
+    font-weight: 200;
+   
+    box-shadow: 0 2px 2px 0 rgba(185, 157, 157, 0.2);
+    
+  }

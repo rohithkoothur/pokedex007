@@ -41,13 +41,13 @@ export default function Home({normaltype,electrictype,fightingtype}) {
                
 
                 
-                    <div className='posters' >
+                    <div className='testposters' >
 
                         {
                             normaltype.pokemon.map((name, index) => {
                                 return (
                                     
-                                    <motion.div className="cardtest" key={name} whileHover={{scale:1.1}}>
+                                    <motion.div className="testcardtest" key={name} whileHover={{scale:1.1}}>
                                          
                                         
                                         
@@ -58,12 +58,12 @@ export default function Home({normaltype,electrictype,fightingtype}) {
                                             {
                                               
                                              
-                                           <h4>{name.pokemon.name.toUpperCase()}</h4>
+                                              <div className="testpokemonname"><h4>{name.pokemon.name.toUpperCase()}</h4></div>
                                           
                                            
                                             
                                             }
-                                            <img className="posters" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${name.pokemon.url.slice(34,-1)}.png`} />
+                                            <img className="testposters" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${name.pokemon.url.slice(34,-1)}.png`} />
                                             
                                             </div></a></Link>
                                         
@@ -84,13 +84,13 @@ export default function Home({normaltype,electrictype,fightingtype}) {
                
 
                 
-                    <div className='posters' >
+                    <div className='testposters' >
 
                         {
                             electrictype.pokemon.map((name, index) => {
                                 return (
                                     
-                                    <motion.div className="cardtest" key={name} whileHover={{scale:1.1}}>
+                                    <motion.div className="testcardtest" key={name} whileHover={{scale:1.1}}>
                                          
                                         
                                         
@@ -101,12 +101,12 @@ export default function Home({normaltype,electrictype,fightingtype}) {
                                             {
                                               
                                              
-                                           <h4>{name.pokemon.name.toUpperCase()}</h4>
+                                              <div className="testpokemonname"><h4>{name.pokemon.name.toUpperCase()}</h4></div>
                                           
                                            
                                             
                                             }
-                                            <img className="posters" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${name.pokemon.url.slice(34,-1)}.png`} />
+                                            <img className="testposters" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${name.pokemon.url.slice(34,-1)}.png`} />
                                             
                                             </div></a></Link>
                                         
@@ -127,13 +127,13 @@ export default function Home({normaltype,electrictype,fightingtype}) {
                
 
                 
-                    <div className='posters' >
+                    <div className='testposters' >
 
                         {
                             fightingtype.pokemon.map((name, index) => {
                                 return (
                                     
-                                    <motion.div className="cardtest" key={name} whileHover={{scale:1.1}}>
+                                    <motion.div className="testcardtest" key={name} whileHover={{scale:1.1,originX:0}}>
                                          
                                         
                                         
@@ -144,12 +144,12 @@ export default function Home({normaltype,electrictype,fightingtype}) {
                                             {
                                               
                                              
-                                           <h4>{name.pokemon.name.toUpperCase()}</h4>
+                                              <div className="testpokemonname"><h4>{name.pokemon.name.toUpperCase()}</h4></div>
                                           
                                            
                                             
                                             }
-                                            <img className="posters" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${name.pokemon.url.slice(34,-1)}.png`} />
+                                            <img className="testposters" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${name.pokemon.url.slice(34,-1)}.png`} />
                                             
                                             </div></a></Link>
                                         
@@ -162,6 +162,11 @@ export default function Home({normaltype,electrictype,fightingtype}) {
      
                     </div>)
             </div>
+            <div className="typeheading">
+  <h2> <Image className="pokeimage" src={pokeball} alt="logo"/>Normal Pokemons</h2>
+</div>
+
+
 
 
     </div>
