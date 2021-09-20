@@ -31,12 +31,16 @@ export default function Home({normaltype,electrictype,fightingtype}) {
   </ol>
 </nav>
 
-<div className="typeheading">
+<motion.div className="typeheading" initial={{opacity:0}}
+animate={{opacity:1}}
+transition={{delay:0.4}}>
   <h2> <Image className="pokeimage" src={pokeball} alt="logo"/>Normal Pokemons</h2>
-</div>
+</motion.div>
 
 <motion.div className='row' 
-
+initial={{opacity:0}}
+animate={{opacity:1}}
+transition={{delay:.8}}
 >
                
 
@@ -76,11 +80,15 @@ export default function Home({normaltype,electrictype,fightingtype}) {
      
                     </div>)
             </motion.div>
-            <div className="typeheading">
+            <motion.div className="typeheading" initial={{opacity:0}}
+animate={{opacity:1}}
+transition={{delay:1.2}}>
   <h2> <Image className="pokeimage" src={pokeball} alt="logo"/>Electric Pokemons</h2>
-</div>
+</motion.div>
 
-<div className='row' >
+<motion.div className='row' initial={{opacity:0}}
+animate={{opacity:1}}
+transition={{delay:1.6}} >
                
 
                 
@@ -118,12 +126,16 @@ export default function Home({normaltype,electrictype,fightingtype}) {
 
      
                     </div>)
-            </div>
+            </motion.div>
             
-            <div className="typeheading">
+            <motion.div className="typeheading" initial={{opacity:0}}
+animate={{opacity:1}}
+transition={{delay:2}}>
   <h2> <Image className="pokeimage" src={pokeball} alt="logo"/>Fighting Pokemons</h2>
-</div>
-<div className='row' >
+</motion.div>
+<motion.div className='row'  initial={{opacity:0}}
+animate={{opacity:1}}
+transition={{delay:2.4}}>
                
 
                 
@@ -161,7 +173,7 @@ export default function Home({normaltype,electrictype,fightingtype}) {
 
      
                     </div>)
-            </div>
+            </motion.div>
             <div className="typeheading">
   <h2> <Image className="pokeimage" src={pokeball} alt="logo"/>Normal Pokemons</h2>
 </div>
