@@ -6,6 +6,7 @@ import Router from 'next/router'
 import { motion } from 'framer-motion'
 const NavBar = ()=>{
     const [pokemon, putPokemon]= useState( []);
+    const [darkMode, setDarkMode] = useState(false);
     
     const [query,setQuery]=useState('');
 
@@ -15,7 +16,10 @@ const NavBar = ()=>{
             
            <nav className="navbar navbar-dark bg-dark">
   <Link href="/"><a className="navbar-brand"><Image src={logo} alt="logo"/>   </a></Link>
+  
+  
   <form className="form-inline">
+  
     <input className="form-control mr-sm-2" value={query} onChange={(e)=>{
       
       setQuery(e.currentTarget.value)
@@ -40,8 +44,22 @@ const NavBar = ()=>{
 
 
     }>Search</button>
+
+<div className="darkornot">
+  {darkMode? <span>Light</span> :<span>Dark</span>}
+  <label className="switch">
+  <input type="checkbox"  onChange={() => setDarkMode(!darkMode)}/>
+  <span className="slider round"></span>
+</label></div>
+   
+
+
+
   </form>
+  
+  
 </nav>
+
 
 {
     pokemon?.name &&  <div className="alert alert-success" role="alert">
@@ -62,7 +80,9 @@ const NavBar = ()=>{
 
 
         </motion.div>
-    )
+       
+    
+       )
 }
 
 export default NavBar
