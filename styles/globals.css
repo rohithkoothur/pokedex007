@@ -9,8 +9,13 @@ font-family: 'Source Code Pro', monospace;    background-color:;
 
 a {
   color: inherit;
+  
+}
+link{
   text-decoration: none;
 }
+
+a:hover { text-decoration: none; }
 
 * {
   box-sizing: border-box;
