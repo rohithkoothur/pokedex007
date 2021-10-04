@@ -9,11 +9,12 @@ import pokeball from '../images/pokeball.png';
 import Link from 'next/link'
 import {motion} from 'framer-motion';
 import {useState} from 'react'
+import DarkMode from "../Components/Darkmode";
 
 
-export default function Home({normaltype, electrictype, fightingtype}, statedata) {
+export default function Home({normaltype, electrictype, fightingtype}, statedata,darkMode) {
     const [pokemon, putPokemon] = useState([]);
-    const [darkMode, setDarkMode] = useState(false);
+
 
     const [query, setQuery] = useState('');
     return (
@@ -28,39 +29,9 @@ export default function Home({normaltype, electrictype, fightingtype}, statedata
             </Head>
 
 
-            {/* NavBar Section */}
-            <motion.div animate={{y: -10}} initial={{y: -250}}>
 
-                <nav className="navbar navbar-dark bg-dark">
-                    <Link href="/"><a className="navbar-brand"><Image src={logo} alt="logo"/> </a></Link>
-                    <form className="form-inline">
-                        <input className="form-control mr-sm-2" value={query} onChange={(e) => {
-                            setQuery(e.currentTarget.value)
-                        }} type="search" placeholder="Search Pokemon Here" aria-label="Search"/>
-                        <button className="btn btn-outline-success my-2 my-sm-0" type="submit" onClick={(e) => {
-                            e.preventDefault();
-                            console.log("searched for " + query)
-                            fetch(`https://pokeapi.co/api/v2/pokemon/${query}`)
-                                .then((resp, Response) => resp.json())
-                                .then(data => {
 
-                                    putPokemon(data);
-                                    console.log(data);
-                                    Router.push(`/pokemons/${query}`)
-                               });
 
-                        }
-                        }>Search
-                        </button>
-                        <div className="darkornot">
-                            {darkMode ? <span>Light</span> : <span>Dark</span>}
-                            <label className="switch">
-                                <input type="checkbox" onChange={() => setDarkMode(!darkMode)}/>
-                                <span className="slider round"></span>
-                            </label></div>
-                    </form>
-                </nav>
-            </motion.div>
             {/* Home Page Section */}
             <nav aria-label="breadcrumb">
                 {/* <ol  className="breadcrumb">
@@ -163,6 +134,7 @@ export default function Home({normaltype, electrictype, fightingtype}, statedata
                 </div>
                 )
             </motion.div>
+
         </div>
     )
 }

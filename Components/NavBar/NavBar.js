@@ -1,15 +1,15 @@
 import Image from 'next/image'
 import logo from '../../images/logo.png'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import Router from 'next/router'
 import { motion } from 'framer-motion'
-const NavBar = ()=>{
-    const [pokemon, putPokemon]= useState( []);
-    const [darkMode, setDarkMode] = useState(false);
-    
-    const [query,setQuery]=useState('');
+import DarkorNot from "../DarkorNot";
 
+const NavBar = ({ darkMode, setDarkMode })=> {
+
+    const [pokemon, putPokemon]= useState( []);
+    const [query,setQuery]=useState('');
 
     return(
         <motion.div animate={{ y:-10}} initial={{y:-250}}>
@@ -34,50 +34,33 @@ const NavBar = ()=>{
           putPokemon(data);
           console.log(data);
           Router.push(`/pokemons/${query}`)
-          
-          
-
-
-        });
+                  });
 
     }
 
 
     }>Search</button>
 
-<div className="darkornot">
-  {darkMode? <span>Light</span> :<span>Dark</span>}
-  <label className="switch">
-  <input type="checkbox"  onChange={() => setDarkMode(!darkMode)}/>
-  <span className="slider round"></span>
-</label></div>
-   
-
-
+      <div className="darkornot">
+          {darkMode? <span>Dark Mode 🔆</span> :<span>🌙</span>}
+          <label className="switch">
+              <input
+                  type="checkbox"
+                  checked={darkMode}
+                  onChange={() => {
+                    setDarkMode(!darkMode);
+                  }}
+              />
+              <span className="slider round"></span>
+          </label></div>
 
   </form>
-  
-  
 </nav>
-
-
 {
     pokemon?.name &&  <div className="alert alert-success" role="alert">
     <h5>Search Result : {pokemon.name.toUpperCase()}</h5>
    </div> 
-    
-    
 }
-
-
-
-
-
-
-
-
-
-
 
         </motion.div>
        

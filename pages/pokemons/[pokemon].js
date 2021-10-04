@@ -4,6 +4,7 @@ import NavBar from '../../Components/NavBar/NavBar'
 import Head from 'next/head';
 import Link from 'next/link'
 import { motion } from "framer-motion"
+import DarkMode from "../../Components/Darkmode";
 
 
 const PokemonPage = ({name,pokemon,error})=>{
@@ -41,7 +42,7 @@ const PokemonPage = ({name,pokemon,error})=>{
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"></link>
       </Head>
-    <NavBar/>  
+
     <br />
     
     
@@ -82,7 +83,7 @@ const PokemonPage = ({name,pokemon,error})=>{
         
         </ul>
 
-        
+
   
          
        
@@ -101,6 +102,7 @@ const PokemonPage = ({name,pokemon,error})=>{
     </motion.div>  
 
 };
+
 
 
 PokemonPage.getInitialProps=({query})=>{
