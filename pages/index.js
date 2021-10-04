@@ -9,10 +9,9 @@ import pokeball from '../images/pokeball.png';
 import Link from 'next/link'
 import {motion} from 'framer-motion';
 import {useState} from 'react'
-import DarkMode from "../Components/Darkmode";
 
 
-export default function Home({normaltype, electrictype, fightingtype}, statedata,darkMode) {
+export default function Home({normaltype, electrictype, fightingtype}, statedata, darkMode) {
     const [pokemon, putPokemon] = useState([]);
 
 
@@ -27,11 +26,6 @@ export default function Home({normaltype, electrictype, fightingtype}, statedata
                 <link rel="stylesheet"
                       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"></link>
             </Head>
-
-
-
-
-
             {/* Home Page Section */}
             <nav aria-label="breadcrumb">
                 {/* <ol  className="breadcrumb">
@@ -40,10 +34,10 @@ export default function Home({normaltype, electrictype, fightingtype}, statedata
   </div>
   </ol>*/}
             </nav>
-            <motion.div className={darkMode ? "darktypeheading" : "typeheading"} initial={{opacity: 0}}
+            <motion.div className={"typeheading"} initial={{opacity: 0}}
                         animate={{opacity: 1}}
                         transition={{delay: 0.4}}>
-                <h2><Image className="pokeimage"  src={pokeball} alt="logo"/><span
+                <h2><Image className="pokeimage" src={pokeball} alt="logo"/><span
                     className="typehead">Normal Pokemons</span></h2>
             </motion.div>
 
@@ -52,12 +46,12 @@ export default function Home({normaltype, electrictype, fightingtype}, statedata
                         animate={{opacity: 1}}
                         transition={{delay: .8}}
             >
-               <div className='testposters'>
+                <div className='testposters'>
                     {
                         normaltype.pokemon.map((name, index) => {
                             return (
 
-                                <motion.div className={darkMode ? "darktestcardtest" : "testcardtest"} key={name}
+                                <motion.div className={"testcardtest"} key={name}
                                             whileHover={{scale: 1.1}}>
                                     <Link href={`/pokemons/${name.pokemon.name}`}><a>
                                         <div className="titt">
@@ -75,7 +69,7 @@ export default function Home({normaltype, electrictype, fightingtype}, statedata
                 </div>
                 )
             </motion.div>
-            <motion.div className={darkMode ? "darktypeheading" : "typeheading"} initial={{opacity: 0}}
+            <motion.div className={"typeheading"} initial={{opacity: 0}}
                         animate={{opacity: 1}}
                         transition={{delay: 1.2}}>
                 <h2><Image className="pokeimage" src={pokeball} alt="logo"/><span style={{padding: "5px"}}>Electric Pokemons</span>
@@ -88,7 +82,7 @@ export default function Home({normaltype, electrictype, fightingtype}, statedata
                     {
                         electrictype.pokemon.map((name, index) => {
                             return (
-                                <motion.div className={darkMode ? "darktestcardtest" : "testcardtest"} key={name}
+                                <motion.div className={"testcardtest"} key={name}
                                             whileHover={{scale: 1.1}}>
                                     <Link href={`/pokemons/${name.pokemon.name}`}><a>
                                         <div className="titt">
@@ -97,14 +91,14 @@ export default function Home({normaltype, electrictype, fightingtype}, statedata
                                             <div className="testpokemonname">{name.pokemon.name.toUpperCase()}</div>
                                         </div>
                                     </a></Link>
-                             </motion.div>
+                                </motion.div>
                             )
                         })
                     }
                 </div>
                 )
             </motion.div>
-            <motion.div className={darkMode ? "darktypeheading" : "typeheading"} initial={{opacity: 0}}
+            <motion.div className={"typeheading"} initial={{opacity: 0}}
                         animate={{opacity: 1}}
                         transition={{delay: 2}}>
                 <h2><Image className="pokeimage" src={pokeball} alt="logo"/>Fighting Pokemons</h2>
@@ -116,7 +110,7 @@ export default function Home({normaltype, electrictype, fightingtype}, statedata
                     {
                         fightingtype.pokemon.map((name, index) => {
                             return (
-                                <motion.div className={darkMode ? "darktestcardtest" : "testcardtest"} key={name}
+                                <motion.div className={"testcardtest"} key={name}
                                             whileHover={{scale: 1.1, originX: 0}}>
                                     <Link href={`/pokemons/${name.pokemon.name}`}><a>
                                         <div className="titt">

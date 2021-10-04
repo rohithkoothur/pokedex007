@@ -20,3 +20,7 @@ a:hover { text-decoration: none; }
 * {
   box-sizing: border-box;
 }
+
+.dark{
+  background-color: black;
+}
